@@ -14,6 +14,12 @@ else
 HAS_CONDA=True
 endif
 
+# Make the environment variables from .env available!
+ifeq (,$(wildcard ./.env))
+    include .env
+    export
+endif
+
 #################################################################################
 # COMMANDS                                                                      #
 #################################################################################
